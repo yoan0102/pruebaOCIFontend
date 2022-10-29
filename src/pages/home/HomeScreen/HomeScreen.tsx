@@ -1,5 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./styles/HomeScreen.scss";
+import { router } from "../../../constants/router";
 
 export interface HomeScreenInterface {}
 
@@ -8,36 +11,16 @@ const HomeScreen: React.FC<HomeScreenInterface> = () => {
     <>
       <section
         data-bs-version="5.1"
-        className="menu menu3 cid-tkyWfTTgff w-100 h-100"
+        className="menu menu3 cid-tkyWfTTgff"
         id="menu3-l"
       >
-        <nav className="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
-          <div className="container">
-            <div className="navbar-brand"></div>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-bs-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarNavAltMarkup"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <div className="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </button>
-            <div
-              className="collapse navbar-collapse"
-              id="navbarSupportedContent"
-            >
-              <div className="icons-menu">
-                <a className="iconfont-wrapper" href="home.html">
+        <nav className="navbar navbar-fixed-top w-100">
+          <div className="container w-100">
+            <div className="row  w-100">
+              <div className="navbar-brand col-11"></div>
+
+              <div className="icons-menu col-1">
+                <Link className="iconfont-wrapper mt-3" to={router.DASHBOARD}>
                   <span
                     className="p-2 mbr-iconfont mbri-user"
                     style={{
@@ -46,15 +29,16 @@ const HomeScreen: React.FC<HomeScreenInterface> = () => {
                       fontSize: "35px",
                     }}
                   ></span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </nav>
       </section>
+      {/* asdasd */}
       <section
         data-bs-version="5.1"
-        className="header7 cid-tkyWhJNTII mbr-parallax-background"
+        className="header7 cid-tkyWhJNTII mbr-parallax-background w-100 h-100 "
         id="header7-m"
       >
         <div className="text-right container">
