@@ -7,11 +7,7 @@ const HomeScreen: React.FC<HomeScreenInterface> = () => {
   return (
     <>
       <NavbarHome />
-      <section
-        data-bs-version="5.1"
-        className="header7 cid-tkyWhJNTII mbr-parallax-background w-100 h-100 "
-        id="header7-m"
-      >
+      <section className="header7 cid-tkyWhJNTII mbr-parallax-background w-100" id="header7-m">
         <div className="text-right container">
           <div className="row justify-content-end">
             <div className="col-12 col-lg-4">
