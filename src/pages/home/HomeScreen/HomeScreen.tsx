@@ -11,10 +11,10 @@ const HomeScreen: React.FC<HomeScreenInterface> = () => {
         <div className="text-right container">
           <div className="row justify-content-end">
             <div className="col-12 col-lg-4">
-              <h1 className="mbr-section-title mbr-fonts-style mb-3 display-1">
-                <strong className="display-1">OCI</strong>
+              <h1 className="mbr-section-title mbr-fonts-style mb-1 display-1">
+                <strong className="display-1 p-0 m-0">OCI</strong>
               </h1>
-              <p className="mbr-text mbr-fonts-style display-7">
+              <p className="mbr-text mbr-fonts-style display-6">
                 La aplicación diseñada <br />
                 para ayudar con el otorgamiento <br />
                 de matrículas para círculos infantiles
