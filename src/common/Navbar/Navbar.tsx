@@ -1,5 +1,5 @@
-import React from "react";
-import "./styles/Navbar.scss";
+import React from 'react';
+import './styles/Navbar.scss';
 export interface NavbarInterface {}
 
 const Navbar: React.FC<NavbarInterface> = () => {
@@ -68,12 +68,7 @@ const Navbar: React.FC<NavbarInterface> = () => {
             </li>
           </ul>
           <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
+            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">
               Search
             </button>
