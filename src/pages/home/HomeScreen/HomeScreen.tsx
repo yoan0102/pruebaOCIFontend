@@ -12,9 +12,8 @@ const HomeScreen: React.FC<HomeScreenInterface> = () => {
           <div className="row justify-content-end">
             <div className="col-12 col-lg-4">
               <h1 className="mbr-section-title mbr-fonts-style mb-3 display-1">
-                <strong>OCI</strong>
+                <strong className="display-1">OCI</strong>
               </h1>
-
               <p className="mbr-text mbr-fonts-style display-7">
                 La aplicación diseñada <br />
                 para ayudar con el otorgamiento <br />

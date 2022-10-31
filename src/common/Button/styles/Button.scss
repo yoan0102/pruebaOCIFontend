@@ -1,6 +1,6 @@
 .btn-bubble {
   background-color: transparent;
-  border: 2px solid #a4af07;
+  border: 2px solid $colorPrimario;
   border-radius: 0.4em;
   padding: 0.5em 2em;
   cursor: pointer;
@@ -14,7 +14,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #a4af07;
+    background-color: $colorPrimario;
     opacity: 0.2;
     position: absolute;
     border-radius: 50px;
@@ -28,7 +28,7 @@
     border-radius: 0;
   }
   span {
-    color: #a4af07;
+    color: $colorPrimario;
     position: relative;
     z-index: 2;
   }
