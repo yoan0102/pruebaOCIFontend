@@ -1,8 +1,11 @@
 export const router = {
-  HOME: "/",
-  DASHBOARD: "/dashboard",
-  LOGIN: "/login",
-  CIRCULO: "/circulo",
-  SUBMISION: "/submision",
-  MAP: "map",
+  HOME: '/',
+  LOGIN: '/login',
+  DASHBOARD: '/dashboard',
+  SUBMISION: '/dashboard/submision',
+  NEW_SUBMISSION: '/dashboard/submision',
+  ESTADISTICAS: '/dashboard/estadisticas',
+  MAP: '/dashboard/map',
+  MATRICULA: '/dashboard/matricula',
+  SEARCH: '/search',
 };

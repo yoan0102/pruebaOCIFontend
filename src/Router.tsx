@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 
 import { router } from './constants';
 
@@ -9,9 +9,16 @@ const Router = () => {
   return (
     <Routes>
       <Route path={router.HOME} element={<HomeScreen />} />
+      {/* <Route path={router.LOGIN} element={<HomeScreen />} /> */}
       <Route path={router.DASHBOARD} element={<DashboardIndex />}>
         <Route path={router.DASHBOARD} element={<Dashboard />} />
+        {/* <Route path={router.NEW_SUBMISSION} element={<Dashboard />} /> */}
+        {/* <Route path={router.ESTADISTICAS} element={<Dashboard />} /> */}
+        {/* <Route path={router.MAP} element={<Dashboard />} /> */}
+        {/* <Route path={router.MATRICULA} element={<Dashboard />} /> */}
+        {/* <Route path={router.SEARCH} element={<Dashboard />} /> */}
       </Route>
+      <Route path="*" element={<Navigate to={router.HOME} replace={true} />} />
     </Routes>
   );
 };
