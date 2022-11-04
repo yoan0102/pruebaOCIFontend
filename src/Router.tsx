@@ -4,6 +4,7 @@ import { router } from './constants';
 
 import { HomeScreen } from './pages/home';
 import { Dashboard, DashboardIndex } from './pages/dashboard';
+import { Submision } from './pages/dashboard/Submision';
 
 const Router = () => {
   return (
@@ -12,7 +13,7 @@ const Router = () => {
       {/* <Route path={router.LOGIN} element={<HomeScreen />} /> */}
       <Route path={router.DASHBOARD} element={<DashboardIndex />}>
         <Route path={router.DASHBOARD} element={<Dashboard />} />
-        {/* <Route path={router.NEW_SUBMISSION} element={<Dashboard />} /> */}
+        <Route path={router.NEW_SUBMISSION} element={<Submision />} />
         {/* <Route path={router.ESTADISTICAS} element={<Dashboard />} /> */}
         {/* <Route path={router.MAP} element={<Dashboard />} /> */}
         {/* <Route path={router.MATRICULA} element={<Dashboard />} /> */}

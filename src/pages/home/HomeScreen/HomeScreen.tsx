@@ -6,21 +6,12 @@ import { useNotification } from '@/context/Notification';
 export interface HomeScreenInterface {}
 
 const HomeScreen: React.FC<HomeScreenInterface> = () => {
-  const { getError, getSuccess } = useNotification();
-
-  const handleClick = () => {
-    getError('Prueba de notification');
-  };
-
   return (
     <>
       <NavbarHome />
       <section className="header7 cid-tkyWhJNTII mbr-parallax-background w-100" id="header7-m">
         <div className="text-right container">
           <div className="row justify-content-end">
-            <button className="btn btn-primary" onClick={handleClick}>
-              Notification
-            </button>
             <div className="col-12 col-lg-4">
               <h1 className="mbr-section-title mbr-fonts-style mb-1 display-1">
                 <strong className="display-1 p-0 m-0">OCI</strong>
