@@ -64,7 +64,7 @@ const FormChildren: React.FC<FormChildrenInterface> = () => {
         isSubmitting,
         /* and other goodies */
       }) => (
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="container">
             {/* primera seccion */}
             <section className="row shadow-sm mb-4">
