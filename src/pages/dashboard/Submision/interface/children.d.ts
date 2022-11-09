@@ -1,3 +1,4 @@
+import { IParent } from './parent';
 export interface IChildren {
   nameChildren: string;
   lastNameChildren: string;
@@ -14,6 +15,7 @@ export interface IChildren {
   cPopular: string;
   municipality: string;
   province: string;
+  parents: IParent;
 }
 
 export enum SexChildren {
