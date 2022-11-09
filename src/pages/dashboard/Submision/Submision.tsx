@@ -103,6 +103,16 @@ const Submision: React.FC<SubmisionInterface> = () => {
       >
         {({ values, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
+            <section className="container">
+              <div className="row g-3">
+                <div className="form-outline">
+                  <label className="form-label" htmlFor="Motive">
+                    Motivo de solicitud
+                  </label>
+                  <textarea name="parents" className="form-control" id="Motive" rows={4}></textarea>
+                </div>
+              </div>
+            </section>
             <FormChildren values={values} />
             <FormPaterns values={values} />
 

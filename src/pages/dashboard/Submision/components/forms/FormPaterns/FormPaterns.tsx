@@ -8,7 +8,7 @@ type FormParetnsProps = {
 
 const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
   return (
-    <section className="">
+    <section>
       <div className="container">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col">
@@ -412,15 +412,6 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                               </label>
                             </div>
                           </div>
-                        </div>
-                      </div>
-
-                      <div className="row g-3">
-                        <div className="form-outline">
-                          <label className="form-label" htmlFor="Motive">
-                            Motivo de solicitud
-                          </label>
-                          <textarea name="parents" className="form-control" id="Motive" rows={4}></textarea>
                         </div>
                       </div>
                     </div>
