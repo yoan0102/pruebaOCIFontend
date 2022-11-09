@@ -20,12 +20,12 @@ const SignupSchema = Yup.object().shape({
   sex: Yup.string(),
   street: Yup.string().required(REQUIRED),
   between: Yup.string(),
-  house: Yup.string().required(REQUIRED),
+  house: Yup.string(),
   stair: Yup.string(),
   locality: Yup.string().required(REQUIRED),
   cPopular: Yup.string().required(REQUIRED),
   municipality: Yup.string().required(REQUIRED),
-  province: Yup.string().required(REQUIRED),
+  province: Yup.string(),
   parents: Yup.object().shape({
     fullNameParent: Yup.string().required(REQUIRED),
     uniqueParent: Yup.boolean(),
@@ -39,8 +39,7 @@ const SignupSchema = Yup.object().shape({
     workPosition: Yup.string(),
     organismo: Yup.string().required(REQUIRED),
     workPhoneParent: Yup.string(),
-    entryTime: Yup.date(),
-    outTime: Yup.date(),
+    horario: Yup.string(),
     salary: Yup.number(),
     otherChildren: Yup.boolean(),
     cantOtherChildren: Yup.number(),
@@ -80,8 +79,7 @@ const initialValues: IChildren = {
     workPosition: '',
     organismo: '',
     workPhoneParent: '',
-    entryTime: null,
-    outTime: null,
+    horario: '',
     salary: 0,
     otherChildren: false,
     cantOtherChildren: 0,
@@ -99,7 +97,7 @@ const Submision: React.FC<SubmisionInterface> = () => {
       <Formik
         initialValues={initialValues}
         onSubmit={(values, actions) => {
-          console.log(values, actions);
+          console.log(values);
         }}
         validationSchema={SignupSchema}
       >

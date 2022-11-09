@@ -11,8 +11,7 @@ export interface IParent {
   workPosition: string;
   organismo: string;
   workPhoneParent: string;
-  entryTime: Date | null;
-  outTime: Date | null;
+  horario: string;
   salary: number;
   otherChildren: boolean;
   cantOtherChildren: number;

@@ -85,14 +85,14 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
           </label>
           <div>
             <div className="form-check">
-              <Field className="form-check-input" type="radio" name="sex" id="sex" value="femenino" />
-              <label className="form-check-label" htmlFor="flexRadioDefault1">
+              <Field className="form-check-input" type="radio" name="sex" id="femenino" value="femenino" />
+              <label className="form-check-label" htmlFor="femenino">
                 Femenino
               </label>
             </div>
             <div className="form-check">
-              <Field className="form-check-input" type="radio" name="sex" id="sex" value="masculino" />
-              <label className="form-check-label" htmlFor="flexRadioDefault2">
+              <Field className="form-check-input" type="radio" name="sex" id="masculino" value="masculino" />
+              <label className="form-check-label" htmlFor="masculino">
                 Masculino
               </label>
             </div>
@@ -137,7 +137,6 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
                 placeholder="Casa..."
                 value={values.house}
               />
-              <ErrorMessage name="house" component="p" className="text-danger" />
             </label>
           </div>
         </div>

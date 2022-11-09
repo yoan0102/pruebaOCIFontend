@@ -144,14 +144,14 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                   <div className="row g-3 justify-content-between align-items-center">
                     <div className="col-sm-6">
                       <div className="form-outline">
-                        <label className="form-label" htmlFor="parentadd">
+                        <label className="form-label" htmlFor="addressParent">
                           Direccion
                         </label>
                         <Field
                           type="text"
                           className="form-control"
-                          name="parents.nameChildren"
-                          id="nameChildren"
+                          name="parents.addressParent"
+                          id="addressParent"
                           placeholder="Direccion del padre"
                           value={values.parents.addressParent}
                         />
@@ -270,7 +270,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                       <div className="col-sm-2 ">
                         <div className="d-flex flex-column justify-content-between align-center ">
                           <label className="form-label">Horario</label>
-                          <Field as="select" className="form-select" aria-label="organismo">
+                          <Field as="select" name="parents.horario" className="form-select" aria-label="organismo">
                             <option selected>--</option>
                             <option value="07-03">07-03</option>
                             <option value="08-04">08-04</option>
