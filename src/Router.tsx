@@ -3,8 +3,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { router } from './constants';
 
 import { HomeScreen } from './pages/home';
-import { Dashboard, DashboardIndex } from './pages/dashboard';
-import { Submision } from './pages/dashboard/Submision';
+import { Dashboard, DashboardIndex, Submision } from './pages';
 
 const Router = () => {
   return (
