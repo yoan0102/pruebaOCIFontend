@@ -1,5 +1,7 @@
 import React from 'react';
 import './styles/NavbarDashboard.scss';
+import { Link } from 'react-router-dom';
+import { router } from '@/constants';
 export interface NavbarDashboardInterface {}
 
 const NavbarDashboard: React.FC<NavbarDashboardInterface> = () => {
@@ -14,14 +16,14 @@ const NavbarDashboard: React.FC<NavbarDashboardInterface> = () => {
         <div className="container-fluid">
           <div className="navbar-brand">
             <span className="navbar-logo">
-              <a href="https://mobiri.se">
+              <Link to="/">
                 <img src="assets/images/logo-107x103.png" alt="Mobirise Website Builder" style={{ height: '3rem' }} />
-              </a>
+              </Link>
             </span>
             <span className="navbar-caption-wrap">
-              <a className="navbar-caption text-success text-primary display-2" href="home.html">
+              <Link className="navbar-caption text-success text-primary display-2" to="/">
                 OCI
-              </a>
+              </Link>
             </span>
           </div>
           <button
@@ -45,44 +47,44 @@ const NavbarDashboard: React.FC<NavbarDashboardInterface> = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
               <li className="nav-item">
-                <a className="nav-link link text-success text-primary display-4" href="newsol.html">
+                <Link className="nav-link link text-success text-primary display-4" to={router.NEW_SUBMISSION}>
                   <span
                     className="mbri-plus mbr-iconfont mbr-iconfont-btn"
                     style={{ color: 'rgb(34, 153, 170)' }}
                   ></span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link link text-success text-primary display-4" href="estadistics.html">
+                <Link className="nav-link link text-success text-primary display-4" to="/">
                   <span
                     className="mbri-growing-chart mbr-iconfont mbr-iconfont-btn"
                     style={{ color: 'rgb(34, 153, 170)' }}
                   ></span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link link text-success text-primary display-4" href="map.html">
+                <Link className="nav-link link text-success text-primary display-4" to="/">
                   <span
                     className="mbri-map-pin mbr-iconfont mbr-iconfont-btn"
                     style={{ color: 'rgb(34, 153, 170)' }}
                   ></span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link link text-success text-primary display-4" href="matriculas.html">
+                <Link className="nav-link link text-success text-primary display-4" to="/">
                   <span
                     className="mbri-pages mbr-iconfont mbr-iconfont-btn"
                     style={{ color: 'rgb(34, 153, 170)' }}
                   ></span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link link text-success show text-primary display-4" href="search.html">
+                <Link className="nav-link link text-success show text-primary display-4" to="/">
                   <span
                     className="mbri-search mbr-iconfont mbr-iconfont-btn"
                     style={{ color: 'rgb(34, 153, 170)' }}
                   ></span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <div
@@ -104,20 +106,20 @@ const NavbarDashboard: React.FC<NavbarDashboardInterface> = () => {
                   aria-labelledby="dropdown-543"
                   data-bs-popper="none"
                 >
-                  <a className="dropdown-item text-success text-primary display-4" href="config.html">
+                  <Link className="dropdown-item text-success text-primary display-4" to="/">
                     <span
                       className="mbri-setting3 mbr-iconfont mbr-iconfont-btn"
                       style={{ color: 'rgb(34, 153, 170)' }}
                     ></span>
                     Configuración
-                  </a>
-                  <a className="dropdown-item text-success text-primary display-4" href="index.html">
+                  </Link>
+                  <Link className="dropdown-item text-success text-primary display-4" to="/">
                     <span
                       className="mbri-login mbr-iconfont mbr-iconfont-btn"
                       style={{ color: 'rgb(34, 153, 170)' }}
                     ></span>
                     Salir
-                  </a>
+                  </Link>
                 </div>
               </li>
             </ul>
