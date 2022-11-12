@@ -39,7 +39,7 @@ const ButtonsCards = [
   },
   {
     title: 'Listado',
-    path: router.SEARCH,
+    path: router.NEW_SUBMISSION,
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ const ButtonsCards = [
   },
   {
     title: 'Matrículas',
-    path: router.MATRICULA,
+    path: router.NEW_SUBMISSION,
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
