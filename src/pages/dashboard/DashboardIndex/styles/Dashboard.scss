@@ -1,0 +1,21 @@
+.admin-index {
+  min-height: 70vh;
+  background-image: url('../../../../assets/images/bg-dashboard-index.jpeg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-container {
+  background: #0000007f;
+  height: 70vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  a {
+    text-decoration: none !important;
+    color: #f8f9fa !important;
+  }
+}

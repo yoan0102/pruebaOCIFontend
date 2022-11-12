@@ -1,9 +1,14 @@
 @import './base/variables';
 
+@import './base/globales';
+
+// Coponents
+@import './components/dashboardIndex';
+
 $theme-colors: (
   'primary': #e5d990,
   'secondary': #1d6042,
-  'success': #198754,
+  'success': #1cb16c,
   'info': #0dcaf0,
   'warning': #ffc107,
   'danger': #dc3545,
@@ -12,7 +17,3 @@ $theme-colors: (
 );
 
 @import 'node_modules/bootstrap/scss/bootstrap';
-
-@import './base/globales';
-
-@import './components/navabarDashboard';

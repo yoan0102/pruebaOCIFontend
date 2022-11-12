@@ -13,11 +13,11 @@ const NavbarDashboard: React.FC<NavbarDashboardInterface> = () => {
     setToggle((state) => !state);
   };
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav className="navbar navbar-expand-lg bg-light shadow-sm mb-5">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           <img src={logo} alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
-          <h1 className="d-inline-block dashboard__title text-secundary">OCI</h1>
+          <h1 className="d-inline-block text-secundary">OCI</h1>
         </a>
         <button
           className="navbar-toggler"
@@ -52,6 +52,11 @@ const NavbarDashboard: React.FC<NavbarDashboardInterface> = () => {
                 <i className="bi bi-people"></i>
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link link text-success text-primary display-4" to="/">
+                <i className="bi bi-search"></i>
+              </NavLink>
+            </li>
             <div className="dashboard-navbar__dropdown">
               <i
                 className="dropdown-toggle mt-3 text-secondary pointer"
@@ -59,7 +64,10 @@ const NavbarDashboard: React.FC<NavbarDashboardInterface> = () => {
                 aria-expanded="false"
                 onClick={handleClickToggle}
               ></i>
-              <ul className={toggle ? 'd-none' : 'd-block'} style={{ position: 'absolute' }}>
+              <ul
+                className={`p-3 ${toggle ? 'd-none' : 'd-block'}`}
+                style={{ position: 'absolute', background: 'white' }}
+              >
                 <li>
                   <NavLink className="text-dark" to="#">
                     <i className="bi bi-gear fs-5"></i>

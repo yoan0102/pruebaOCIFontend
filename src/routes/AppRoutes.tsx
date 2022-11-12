@@ -1,4 +1,4 @@
-import { DashboardScreen, HomeScreen, LoginScreen } from '@/pages';
+import { DashboardScreen, HomeScreen, LoginScreen, Submision } from '@/pages';
 import { createBrowserRouter } from 'react-router-dom';
 import DashboardIndex from '@/pages/dashboard/DashBoardIndex/DashBoardIndex';
 
@@ -18,6 +18,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <DashboardIndex />,
+      },
+      {
+        path: 'submision',
+        element: <Submision />,
       },
     ],
   },
