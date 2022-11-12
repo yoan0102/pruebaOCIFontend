@@ -17,7 +17,11 @@ const NavbarDashboard: React.FC<NavbarDashboardInterface> = () => {
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           <img src={logo} alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
-          <h1 className="d-inline-block text-secundary">OCI</h1>
+          <h1 className="d-inline-block ">
+            <Link to="/" className="text-secondary">
+              OCI
+            </Link>
+          </h1>
         </a>
         <button
           className="navbar-toggler"

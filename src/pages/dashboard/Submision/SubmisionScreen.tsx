@@ -3,7 +3,7 @@ import { FormChildren } from './components/forms/FormChildren';
 import { IChildren, SexChildren, TypeParent } from './interface';
 import './styles/Submision.scss';
 import * as Yup from 'yup';
-import { Formik } from 'formik';
+import { Field, Formik } from 'formik';
 export interface SubmisionInterface {}
 
 const REQUIRED = 'Este campo es requerido';
@@ -104,15 +104,61 @@ const Submision: React.FC<SubmisionInterface> = () => {
         {({ values, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
             <section className="container">
-              <div className="row g-3">
-                <div className="form-outline">
-                  <label className="form-label" htmlFor="Motive">
-                    Motivo de solicitud
-                  </label>
-                  <textarea name="parents" className="form-control" id="Motive" rows={4}></textarea>
+              <div className="card">
+                <div className="card-header">
+                  <h2>Datos de la Planilla</h2>
+                </div>
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-sm-2 mb-3">
+                      <label htmlFor="noEntry" className="form-label">
+                        No De entrada de la Planilla
+                      </label>
+                      <Field type="email" className="form-control" name="noEntry" id="noEntry" />
+                    </div>
+                    <div className="col-sm-2 p-lg-5">
+                      <div className="form-check form-switch">
+                        <Field
+                          className="form-check-input switch-lg"
+                          type="checkbox"
+                          role="switch"
+                          name="social_case"
+                          id="social_case"
+                        />
+                        <label className="form-label" htmlFor="social_case">
+                          Caso Social
+                        </label>
+                      </div>
+                    </div>
+                    <div className="form-check">
+                      <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                      <label className="form-check-label" htmlFor="flexRadioDefault1">
+                        Default radio
+                      </label>
+                    </div>
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault2"
+                        checked
+                      />
+                      <label className="form-check-label" htmlFor="flexRadioDefault2">
+                        Default checked radio
+                      </label>
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="motive" className="form-label">
+                        Motivo de la solicitud
+                      </label>
+                      <Field type="textarea" name="motive" className="form-control" id="motive" rows={3}></Field>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
+
             <FormChildren values={values} />
             <FormPaterns values={values} />
 
