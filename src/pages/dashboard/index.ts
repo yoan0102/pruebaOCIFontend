@@ -1,5 +1,5 @@
-export * from './Dashboard';
-export * from './DashboardIndex';
+export * from './DashBoardIndex';
+export * from './DashboardScreen';
 export * from './Submision/components/forms/FormChildren';
 export * from './Submision/components/forms/FormPaterns';
 export * from './Submision/components/forms';

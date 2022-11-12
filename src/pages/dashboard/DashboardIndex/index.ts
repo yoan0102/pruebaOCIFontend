@@ -1,1 +1,1 @@
-export { default as DashboardIndex } from './DashboardIndex';
+export { default as DashBoardIndex } from './DashBoardIndex';

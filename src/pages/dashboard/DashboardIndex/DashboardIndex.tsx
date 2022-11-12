@@ -1,16 +1,7 @@
-import React from 'react';
-import './styles/DashboardIndex.scss';
-import { Outlet } from 'react-router-dom';
-import { NavbarDashboard } from '../components/NavbarDashboard';
-export interface DashboardIndexInterface {}
+export interface DashBoardIndexInterface {}
 
-const DashboardIndex: React.FC<DashboardIndexInterface> = () => {
-  return (
-    <div className="dashboardindex">
-      <NavbarDashboard />
-      <Outlet />
-    </div>
-  );
+const DashBoardIndex: React.FC<DashBoardIndexInterface> = () => {
+  return <div>DashBoardIndex</div>;
 };
 
-export default DashboardIndex;
+export default DashBoardIndex;

@@ -1,4 +1,18 @@
-.navbardashboard {
+i {
+  font-size: 2rem;
+}
+
+.dashboard-navbar__dropdown {
+  ul {
+    list-style: none;
+    transition: all 2s ease-in;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
 }
 
 .active {
