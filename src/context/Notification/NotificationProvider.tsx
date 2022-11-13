@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useContext, useState } from 'react';
 import { NotificationContext } from './NotificationContext';
 import { Notification } from '@/components';
 
@@ -29,4 +29,10 @@ export const NotificationProvider: FC<{ children: JSX.Element }> = ({ children }
       {children}
     </NotificationContext.Provider>
   );
+};
+
+export const useNotification = () => {
+  const context = useContext(NotificationContext);
+  if (!context) throw new Error('No existe C\ntexto');
+  return context;
 };
