@@ -1,9 +1,9 @@
 import { ErrorMessage, Field } from 'formik';
-import { IChildren } from '../../../interface';
+import { IParent } from '../../../interface/parent';
 import './styles/FormPaterns.scss';
 
 type FormParetnsProps = {
-  values: IChildren;
+  values: IParent;
 };
 
 const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
@@ -25,12 +25,12 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                       <Field
                         type="text"
                         id="fullNameParent"
-                        name="parents.fullNameParent"
+                        name="children.parents.fullNameParent"
                         className="form-control"
                         placeholder="Nombre del Padre"
-                        value={values.parents.fullNameParent}
+                        value={values.fullNameParent}
                       />
-                      <ErrorMessage name="parents.fullNameParent" component="p" className="text-danger" />
+                      <ErrorMessage name="children.parents.fullNameParent" component="p" className="text-danger" />
                     </div>
                   </div>
                   {/* Parentesco */}
@@ -47,7 +47,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                           <Field
                             className="form-check-input"
                             type="radio"
-                            name="parents.typeParent"
+                            name="children.parents.typeParent"
                             id="madre"
                             value="madre"
                             checked
@@ -61,7 +61,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                           <Field
                             className="form-check-input"
                             type="radio"
-                            name="parents.typeParent"
+                            name="children.parents.typeParent"
                             id="padre"
                             value="padre"
                           />
@@ -74,7 +74,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                           <input
                             className="form-check-input"
                             type="radio"
-                            name="parents.typeParent"
+                            name="children.parents.typeParent"
                             id="tutor"
                             value="tutor"
                           />
@@ -82,7 +82,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                             Tutor{' '}
                           </label>
                         </div>
-                        <ErrorMessage name="parents.typeParent" component="p" className="text-danger" />
+                        <ErrorMessage name="children.parents.typeParent" component="p" className="text-danger" />
                       </div>
                     </div>
                   </div>
@@ -99,7 +99,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                         <Field
                           className="form-check-input"
                           type="checkbox"
-                          name="parents.occupation"
+                          name="children.parents.occupation"
                           id="trabajador"
                           value="trabajador"
                         />
@@ -112,7 +112,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                         <Field
                           className="form-check-input"
                           type="checkbox"
-                          name="parents.occupation"
+                          name="children.parents.occupation"
                           id="jubilado"
                           value="jubilado"
                         />
@@ -125,7 +125,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                         <Field
                           className="form-check-input"
                           type="checkbox"
-                          name="parents.occupation"
+                          name="children.parents.occupation"
                           id="asistenciado"
                           value="asistenciado"
                         />
@@ -133,7 +133,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                           Asistenciado
                         </label>
                       </div>
-                      <ErrorMessage name="parents.typeParent" component="p" className="text-danger" />
+                      <ErrorMessage name="children.parents.typeParent" component="p" className="text-danger" />
                     </div>
                   </div>
                 </div>
@@ -147,10 +147,11 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                       <Field
                         type="text"
                         className="form-control"
-                        name="parents.addressParent"
+                        name="children.parents.addressParent"
                         id="addressParent"
                         placeholder="Direccion del padre"
-                        value={values.parents.addressParent}
+                        value={values.convivencia ? '' : values.addressParent}
+                        disabled={values.convivencia}
                       />
                     </div>
                   </div>
@@ -161,9 +162,9 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                         className="form-check-input switch-lg"
                         type="checkbox"
                         role="switch"
-                        name="parents.convivencia"
+                        name="children.parents.convivencia"
                         id="convivencia"
-                        checked={values.parents.convivencia}
+                        checked={values.convivencia}
                       />
                       <label className="form-label" htmlFor="convivencia">
                         Convive
@@ -179,13 +180,13 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                       <Field
                         className="form-control"
                         type="text"
-                        name="parents.phoneNumberParent"
+                        name="children.parents.phoneNumberParent"
                         id="phoneNumberParent"
                         placeholder="Telefono del padre"
-                        value={values.parents.phoneNumberParent}
+                        value={values.phoneNumberParent}
                       />
                     </div>
-                    <ErrorMessage name="parents.phoneNumberParent" component="p" className="text-danger" />
+                    <ErrorMessage name="cbhildren.parents.phoneNumberParent" component="p" className="text-danger" />
                   </div>
 
                   <div className="col-sm-4">
@@ -195,13 +196,13 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                       </label>
                       <Field
                         type="text"
-                        name="parents.work"
+                        name="children.parents.work"
                         id="work"
                         className="form-control"
-                        value={values.parents.work}
+                        value={values.work}
                       />
                     </div>
-                    <ErrorMessage name="parents.work" component="p" className="text-danger" />
+                    <ErrorMessage name="children.parents.work" component="p" className="text-danger" />
                   </div>
 
                   <div className="col-sm-4">
@@ -212,9 +213,9 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                       <Field
                         type="text"
                         id="workPosition"
-                        name="parents.workPosition"
+                        name="children.parents.workPosition"
                         className="form-control"
-                        value={values.parents.workPosition}
+                        value={values.workPosition}
                       />
                     </div>
                   </div>
@@ -222,14 +223,19 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                   <div className="col-sm-4 p-lg-2">
                     <div className="d-flex flex-column  align-center">
                       <label className="form-label">Organismo</label>
-                      <Field as="select" name="parents.organismo" className="form-select" aria-label="organismo">
-                        <option selected>----Seleccione----</option>
+                      <Field
+                        as="select"
+                        name="children.parents.organismo"
+                        className="form-select"
+                        aria-label="organismo"
+                      >
+                        <option>----Seleccione----</option>
                         <option value="minsap">MINSAP</option>
                         <option value="mined">MINED</option>
                         <option value="minag">MINAG</option>
                       </Field>
                     </div>
-                    <ErrorMessage name="parents.organismo" component="p" className="text-danger" />
+                    <ErrorMessage name="children.parents.organismo" component="p" className="text-danger" />
                   </div>
 
                   <div className="row g-3">
@@ -241,12 +247,12 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                         <Field
                           type="text"
                           id="workAddress"
-                          name="parents.workAddress"
+                          name="children.parents.workAddress"
                           className="form-control"
-                          value={values.parents.workAddress}
+                          value={values.workAddress}
                         />
                       </div>
-                      <ErrorMessage name="parents.workAddress" component="p" className="text-danger" />
+                      <ErrorMessage name="children.parents.workAddress" component="p" className="text-danger" />
                     </div>
 
                     <div className="col-sm-3">
@@ -257,9 +263,9 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                         <Field
                           type="tel"
                           id="workPhoneParent"
-                          name="parents.workPhoneParent"
+                          name="children.parents.workPhoneParent"
                           className="form-control"
-                          value={values.parents.workPhoneParent}
+                          value={values.workPhoneParent}
                         />
                       </div>
                     </div>
@@ -267,7 +273,12 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                     <div className="col-sm-2 ">
                       <div className="d-flex flex-column justify-content-between align-center ">
                         <label className="form-label">Horario</label>
-                        <Field as="select" name="parents.horario" className="form-select" aria-label="organismo">
+                        <Field
+                          as="select"
+                          name="children.parents.horario"
+                          className="form-select"
+                          aria-label="organismo"
+                        >
                           <option selected>--</option>
                           <option value="07-03">07-03</option>
                           <option value="08-04">08-04</option>
@@ -284,9 +295,9 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                         <Field
                           type="text"
                           id="salary"
-                          name="parents.salary"
+                          name="children.parents.salary"
                           className="form-control"
-                          value={values.parents.salary}
+                          value={values.salary}
                         />
                       </div>
                     </div>
@@ -306,7 +317,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                             <Field
                               className="form-check-input"
                               type="radio"
-                              name="parents.otherChildren"
+                              name="children.parents.otherChildren"
                               id="otherChildren"
                             />
                             <label className="form-check-label" htmlFor="otherChildren">
@@ -318,7 +329,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                             <Field
                               className="form-check-input"
                               type="radio"
-                              name="parents.otherChildren"
+                              name="children.parents.otherChildren"
                               id="otherChildren"
                               checked
                             />
@@ -338,9 +349,9 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                         <input
                           type="text"
                           id="cantOtherChildren"
-                          name="parents.cantOtherChildren"
+                          name="childre.parents.cantOtherChildren"
                           className="form-control"
-                          value={values.parents.cantOtherChildren}
+                          value={values.cantOtherChildren}
                         />
                       </div>
                     </div>
@@ -350,7 +361,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                         <label className="form-label">Centro</label>
                         <Field
                           as="select"
-                          name="parents.ciOtherChildren"
+                          name="children.parents.ciOtherChildren"
                           className="form-select"
                           aria-label="ciOtherChildren"
                         >
@@ -374,7 +385,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                             <input
                               className="form-check-input"
                               type="checkbox"
-                              name="parents.pregnant"
+                              name="children.parents.pregnant"
                               id="pregnant"
                               value="pregnant"
                             />
@@ -387,7 +398,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                             <Field
                               className="form-check-input"
                               type="checkbox"
-                              name="parent.student"
+                              name="children.parent.student"
                               id="student"
                               value="student"
                             />
@@ -400,7 +411,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                             <Field
                               className="form-check-input"
                               type="checkbox"
-                              name="parents.deaf"
+                              name="children.parents.deaf"
                               id="deaf"
                               value="deaf"
                             />
