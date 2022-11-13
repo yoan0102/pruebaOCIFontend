@@ -8,7 +8,10 @@ type FormChildrenProps = {
 
 const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
   return (
-    <div className="container">
+    <div className="container mt-3">
+      <div className="card-header">
+        <h2 className="text-center">Datos del Nino</h2>
+      </div>
       {/* primera seccion */}
       <section className="row shadow-sm">
         <div className="col-12 col-md-4 d-flex flex-column">

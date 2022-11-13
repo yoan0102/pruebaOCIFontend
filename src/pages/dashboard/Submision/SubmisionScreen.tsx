@@ -104,32 +104,32 @@ const Submision: React.FC<SubmisionInterface> = () => {
         {({ values, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
             <section className="container">
-              <div className="card">
-                <div className="card-header">
-                  <h2>Datos de la Planilla</h2>
-                </div>
-                <div className="card-body">
-                  <div className="row">
-                    <div className="col-sm-2 mb-3">
-                      <label htmlFor="noEntry" className="form-label">
-                        No De entrada de la Planilla
+              <div className="card-header">
+                <h2 className="text-center">Datos de la Planilla</h2>
+              </div>
+              <div className="card-body">
+                <div className="row justify-content-around">
+                  <div className="col-sm-2 mb-3">
+                    <label htmlFor="noEntry" className="form-label">
+                      No De entrada de la Planilla
+                    </label>
+                    <Field type="email" className="form-control" name="noEntry" id="noEntry" />
+                  </div>
+                  <div className="col-sm-2 p-lg-5">
+                    <div className="form-check form-switch">
+                      <Field
+                        className="form-check-input switch-lg"
+                        type="checkbox"
+                        role="switch"
+                        name="social_case"
+                        id="social_case"
+                      />
+                      <label className="form-label" htmlFor="social_case">
+                        Caso Social
                       </label>
-                      <Field type="email" className="form-control" name="noEntry" id="noEntry" />
                     </div>
-                    <div className="col-sm-2 p-lg-5">
-                      <div className="form-check form-switch">
-                        <Field
-                          className="form-check-input switch-lg"
-                          type="checkbox"
-                          role="switch"
-                          name="social_case"
-                          id="social_case"
-                        />
-                        <label className="form-label" htmlFor="social_case">
-                          Caso Social
-                        </label>
-                      </div>
-                    </div>
+                  </div>
+                  <div className="col-sm">
                     <div className="form-check">
                       <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
                       <label className="form-check-label" htmlFor="flexRadioDefault1">
@@ -148,12 +148,13 @@ const Submision: React.FC<SubmisionInterface> = () => {
                         Default checked radio
                       </label>
                     </div>
-                    <div className="mb-3">
-                      <label htmlFor="motive" className="form-label">
-                        Motivo de la solicitud
-                      </label>
-                      <Field type="textarea" name="motive" className="form-control" id="motive" rows={3}></Field>
-                    </div>
+                  </div>
+
+                  <div className="mb-3 col-md-7">
+                    <label htmlFor="motive" className="form-label">
+                      Motivo de la solicitud
+                    </label>
+                    <Field type="textarea" name="motive" className="form-control" id="motive" rows={3}></Field>
                   </div>
                 </div>
               </div>
