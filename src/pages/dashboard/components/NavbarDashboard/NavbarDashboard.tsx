@@ -1,4 +1,3 @@
-import React from 'react';
 import './styles/NavbarDashboard.scss';
 import { Link, NavLink } from 'react-router-dom';
 import { router } from '@/constants';
@@ -18,7 +17,7 @@ const NavbarDashboard: React.FC<NavbarDashboardInterface> = () => {
         <a className="navbar-brand" href="#">
           <img src={logo} alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
           <h1 className="d-inline-block ">
-            <Link to="/" className="text-secondary">
+            <Link to={router.HOME} className="text-secondary">
               OCI
             </Link>
           </h1>

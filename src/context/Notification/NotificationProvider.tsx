@@ -2,7 +2,7 @@ import { FC, useContext, useState } from 'react';
 import { NotificationContext } from './NotificationContext';
 import { Notification } from '@/components';
 
-export const NotificationProvider: FC<{ children: JSX.Element }> = ({ children }) => {
+export const NotificationProvider: FC<{ children: JSX.Element | JSX.Element[] }> = ({ children }) => {
   const [msg, setMsg] = useState<string>('');
   const [open, setOpen] = useState<boolean>(false);
   const [severity, setSeverity] = useState<string | undefined>();

@@ -6,6 +6,8 @@ import { ISubmision, SexChildren, TypeParent, TypeSubmision } from './interface'
 import './styles/Submision.scss';
 import { useSubmision } from '../context/submision.context';
 import { useNotification } from '@/context/Notification/NotificationProvider';
+import { useNavigate } from 'react-router-dom';
+import { router } from '@/constants';
 
 export interface SubmisionInterface {}
 
@@ -108,24 +110,28 @@ const initialValues: ISubmision = {
 const Submision: React.FC<SubmisionInterface> = () => {
   const submisionContext = useSubmision();
   const notification = useNotification();
+  const navigate = useNavigate();
   return (
     <div className="submision container">
       <h2 className="text-center mb-5">Solicitud de Matricula de Circulo Infantil</h2>
       <Formik
         initialValues={initialValues}
         onSubmit={async (values, actions) => {
+          alert(values);
           try {
             const submision = await submisionContext?.createSubmision({ submision: values });
             if (submision) {
               notification.getSuccess('Submison Guardada');
             }
+            actions.setSubmitting(false);
           } catch (error) {
             notification.getError('Ocurrio un error intentalo mas tarde');
+            actions.setSubmitting(false);
           }
         }}
         validationSchema={SignupSchema}
       >
-        {({ values, handleSubmit }) => (
+        {({ values, handleSubmit, handleReset, isSubmitting }) => (
           <form onSubmit={handleSubmit}>
             <section className="container">
               <div className="card-header">
@@ -189,11 +195,11 @@ const Submision: React.FC<SubmisionInterface> = () => {
             <FormPaterns values={values.children.parents} />
 
             <div className="d-flex d-flex justify-content-center  gap-2 pb-3">
-              <button type="button" className="btn btn-warning  ms-2 text-white">
+              <button type="button" className="btn btn-warning  ms-2 text-white" onClick={handleReset}>
                 <i className="bi bi-arrow-clockwise"></i>
               </button>
 
-              <button type="button" className="btn btn-danger text-white">
+              <button type="button" className="btn btn-danger text-white" onClick={() => navigate(router.DASHBOARD)}>
                 <i className="bi bi-x-lg"></i>
               </button>
 
