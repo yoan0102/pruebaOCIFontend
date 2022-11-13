@@ -20,24 +20,24 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
             <Field
               className="form-control"
               type="text"
-              name="nameChildren"
+              name="children.nameChildren"
               id="nameChildren"
               placeholder="Nombre del Menor"
               value={values.nameChildren}
             />
-            <ErrorMessage name="nameChildren" component="p" className="text-danger" />
+            <ErrorMessage name="children.nameChildren" component="p" className="text-danger" />
           </label>
           <label className="form-label">
             No Carnet Identidad:
             <Field
               className="form-control"
               type="number"
-              name="noIdentity"
+              name="cbhildren.noIdentity"
               id="noIdentity"
               placeholder="Numero de CI"
               value={values.noIdentity}
             />
-            <ErrorMessage name="noIdentity" component="p" className="text-danger" />
+            <ErrorMessage name="children.noIdentity" component="p" className="text-danger" />
           </label>
         </div>
         <div className="col-12 col-md-4">
@@ -46,30 +46,37 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
             <Field
               className="form-control"
               type="text"
-              name="lastNameChildren"
+              name="children.lastNameChildren"
               id="lastNameChildren"
               placeholder="Primer Apellido"
               value={values.lastNameChildren}
             />
-            <ErrorMessage name="lastNameChildren" component="p" className="text-danger" />
+            <ErrorMessage name="children.lastNameChildren" component="p" className="text-danger" />
           </label>
           <div className="d-flex justify-content-between align-center">
             <label className="form-label">
               Edad:
-              <Field className="form-control" type="number" name="age" id="age" placeholder="Edad" value={values.age} />
-              <ErrorMessage name="age" component="p" className="text-danger" />
+              <Field
+                className="form-control"
+                type="number"
+                name="children.age"
+                id="age"
+                placeholder="Edad"
+                value={values.age}
+              />
+              <ErrorMessage name="children.age" component="p" className="text-danger" />
             </label>
             <label className="form-label">
               Ano vida:
               <Field
                 className="form-control"
                 type="number"
-                name="year_of_life"
+                name="children.year_of_life"
                 id="year_of_life"
                 placeholder="Ano de vida"
                 value={values.year_of_life}
               />
-              <ErrorMessage name="year_of_life" component="p" className="text-danger" />
+              <ErrorMessage name="children.year_of_life" component="p" className="text-danger" />
             </label>
           </div>
         </div>
@@ -79,22 +86,22 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
             <Field
               className="form-control"
               type="text"
-              name="lastNameChildren2"
+              name="children.lastNameChildren2"
               id="lastNameChildren2"
               placeholder="Segundo Apellido"
               value={values.lastNameChildren2}
             />
-            <ErrorMessage name="lastNameChildren2" component="p" className="text-danger" />
+            <ErrorMessage name="children.lastNameChildren2" component="p" className="text-danger" />
           </label>
           <div>
             <div className="form-check">
-              <Field className="form-check-input" type="radio" name="sex" id="femenino" value="femenino" />
+              <Field className="form-check-input" type="radio" name="children.sex" id="femenino" value="femenino" />
               <label className="form-check-label" htmlFor="femenino">
                 Femenino
               </label>
             </div>
             <div className="form-check">
-              <Field className="form-check-input" type="radio" name="sex" id="masculino" value="masculino" />
+              <Field className="form-check-input" type="radio" name="children.sex" id="masculino" value="masculino" />
               <label className="form-check-label" htmlFor="masculino">
                 Masculino
               </label>
@@ -112,19 +119,19 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
               <Field
                 className="form-control"
                 type="text"
-                name="street"
+                name="children.street"
                 id="street"
                 placeholder="Calle donde vive el menor"
                 value={values.street}
               />
-              <ErrorMessage name="street" component="p" className="text-danger" />
+              <ErrorMessage name="children.street" component="p" className="text-danger" />
             </label>
             <label className="form-label">
               Entre:
               <Field
                 className="form-control"
                 type="text"
-                name="between"
+                name="children.between"
                 id="between"
                 placeholder="Entre..."
                 value={values.between}
@@ -135,7 +142,7 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
               <Field
                 className="form-control"
                 type="text"
-                name="house"
+                name="children.house"
                 id="house"
                 placeholder="Casa..."
                 value={values.house}
@@ -150,7 +157,7 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
               <Field
                 className="form-control"
                 type="text"
-                name="stair"
+                name="children.stair"
                 id="stair"
                 placeholder="Calle donde vive el menor"
                 value={values.stair}
@@ -161,12 +168,12 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
               <Field
                 className="form-control"
                 type="text"
-                name="locality"
+                name="children.locality"
                 id="locality"
                 placeholder="Localidad"
                 value={values.locality}
               />
-              <ErrorMessage name="locality" component="p" className="text-danger" />
+              <ErrorMessage name="children.locality" component="p" className="text-danger" />
             </label>
           </div>
         </div>
@@ -176,7 +183,7 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
         <div className="d-flex flex-column flex-md-row justify-content-between align-center gap-3">
           <label className="form-label w-100">
             Consejo Popular:
-            <Field as="select" className="form-select" name="cPopular">
+            <Field as="select" className="form-select" name="children.cPopular">
               <option value="" selected>
                 ---Seleccione---
               </option>
@@ -184,11 +191,11 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
               <option value="sierracaballo">Sierra Caballo</option>
               <option value="abelsantamaria">Abel Santamaria</option>
             </Field>
-            <ErrorMessage name="cPopular" component="p" className="text-danger" />
+            <ErrorMessage name="children.cPopular" component="p" className="text-danger" />
           </label>
           <label className="form-label w-100">
             Municipio:
-            <Field as="select" className="form-select" name="municipality">
+            <Field as="select" className="form-select" name="children.municipality">
               <option value="" selected>
                 ---Seleccione---
               </option>
@@ -198,12 +205,12 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
           </label>
           <label className="form-label w-100">
             Provincia:
-            <Field as="select" className="form-select" name="province">
+            <Field as="select" className="form-select" name="children.province">
               <option value="" selected>
                 ---Seleccione---
               </option>
             </Field>
-            <ErrorMessage name="province" component="p" className="fill-error text-danger" />
+            <ErrorMessage name="children.province" component="p" className="fill-error text-danger" />
           </label>
         </div>
       </section>
