@@ -16,7 +16,7 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
       <section className="row shadow-sm">
         <div className="col-12 col-md-4 d-flex flex-column">
           <label className="form-label">
-            Nombre del Menor:
+            Nombre:
             <Field
               className="form-control"
               type="text"
@@ -42,7 +42,7 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
         </div>
         <div className="col-12 col-md-4">
           <label className="form-label w-100">
-            Apellido1:
+            Primer Apellido:
             <Field
               className="form-control"
               type="text"
@@ -53,7 +53,7 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
             />
             <ErrorMessage name="children.lastNameChildren" component="p" className="text-danger" />
           </label>
-          <div className="d-flex justify-content-between align-center">
+          <div className="d-flex justify-content-between align-center gap-3">
             <label className="form-label">
               Edad:
               <Field
@@ -66,23 +66,25 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
               />
               <ErrorMessage name="children.age" component="p" className="text-danger" />
             </label>
-            <label className="form-label">
-              Ano vida:
-              <Field
-                className="form-control"
-                type="number"
-                name="children.year_of_life"
-                id="year_of_life"
-                placeholder="Ano de vida"
-                value={values.year_of_life}
-              />
+            <label className="form-label w-100">
+              Año de Vida:
+              <Field as="select" className="form-select" name="children.year_of_life">
+                <option value="" selected>
+                  ---Seleccione---
+                </option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </Field>
               <ErrorMessage name="children.year_of_life" component="p" className="text-danger" />
             </label>
           </div>
         </div>
         <div className="col-12 col-md-4">
           <label className="form-label w-100">
-            Apellido2:
+            Segundo Apellido:
             <Field
               className="form-control"
               type="text"
