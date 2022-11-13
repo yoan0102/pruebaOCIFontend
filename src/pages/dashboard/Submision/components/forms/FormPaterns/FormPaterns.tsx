@@ -335,10 +335,10 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                         <label className="form-label" htmlFor="cantOtherChildren">
                           Cantidad
                         </label>
-                        <input
+                        <Field
                           type="number"
                           id="cantOtherChildren"
-                          name="childre.parents.cantOtherChildren"
+                          name="children.parents.cantOtherChildren"
                           className="form-control"
                           value={values.cantOtherChildren}
                           disabled={!values.otherChildren}
@@ -384,12 +384,11 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                               Embarazada
                             </label>
                           </div>
-
                           <div className="form-check form-check-inline p-md-1">
-                            <Field
+                            <input
                               className="form-check-input"
                               type="checkbox"
-                              name="children.parent.student"
+                              name="children.parents.student"
                               id="student"
                               value="student"
                             />
@@ -397,9 +396,8 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                               Estudiante
                             </label>
                           </div>
-
                           <div className="form-check form-check-inline p-md-1">
-                            <Field
+                            <input
                               className="form-check-input"
                               type="checkbox"
                               name="children.parents.deaf"
