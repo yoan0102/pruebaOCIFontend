@@ -293,7 +293,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                           Salario
                         </label>
                         <Field
-                          type="text"
+                          type="number"
                           id="salary"
                           name="children.parents.salary"
                           className="form-control"
@@ -308,33 +308,22 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                       <div className="form-outline">
                         <div>
                           <label className="form-label" htmlFor="typeParent">
-                            Tiene otros ninos en CI?
+                            Otros ninos en CI?
                           </label>
                         </div>
 
                         <div className="d-flex flex-column flex-md-row gap-3">
-                          <div className="form-check form-check-inline p-md-2 ">
+                          <div className="form-check form-switch">
                             <Field
-                              className="form-check-input"
-                              type="radio"
+                              className="form-check-input switch-lg"
+                              type="checkbox"
+                              role="switch"
                               name="children.parents.otherChildren"
                               id="otherChildren"
+                              checked={values.otherChildren}
                             />
-                            <label className="form-check-label" htmlFor="otherChildren">
-                              Si{' '}
-                            </label>
-                          </div>
-
-                          <div className="form-check htmlForm-check-inline p-md-2">
-                            <Field
-                              className="form-check-input"
-                              type="radio"
-                              name="children.parents.otherChildren"
-                              id="otherChildren"
-                              checked
-                            />
-                            <label className="form-check-label" htmlFor="otherChildren">
-                              No{' '}
+                            <label className="form-label" htmlFor="otherChildren">
+                              {values.otherChildren ? 'Si' : 'No'}
                             </label>
                           </div>
                         </div>
@@ -347,11 +336,12 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                           Cantidad
                         </label>
                         <input
-                          type="text"
+                          type="number"
                           id="cantOtherChildren"
                           name="childre.parents.cantOtherChildren"
                           className="form-control"
                           value={values.cantOtherChildren}
+                          disabled={!values.otherChildren}
                         />
                       </div>
                     </div>
@@ -364,6 +354,7 @@ const htmlFormPaterns: React.FC<FormParetnsProps> = ({ values }) => {
                           name="children.parents.ciOtherChildren"
                           className="form-select"
                           aria-label="ciOtherChildren"
+                          disabled={!values.otherChildren}
                         >
                           <option selected>----Seleccione----</option>
                           <option value="Menique">Menique</option>
