@@ -1,23 +1,8 @@
 import { submisionService } from '@/services';
 import { AxiosResponse } from 'axios';
 import { createContext, FC, useState, useContext } from 'react';
-import { TypeSubmision } from '../Submision/interface/submmision';
+import { ISubmision } from '@/pages/dashboard/Submision/interface';
 
-export interface ISubmision {
-  noEntry: number;
-  type: TypeSubmision.NEW | TypeSubmision.TRASLADO;
-  social_case: boolean;
-  motive: string;
-  children: string;
-}
-
-const initialValues: ISubmision = {
-  noEntry: 0,
-  type: TypeSubmision.NEW,
-  social_case: false,
-  motive: '',
-  children: '',
-};
 type SubmisionContextType = {
   submisions: ISubmision[];
   createSubmision: (submision: { submision: ISubmision }) => void;
@@ -45,6 +30,6 @@ export default SubmisionContextProvider;
 
 export const useSubmision = () => {
   const context = useContext(SubmisionContext);
-  if (context === undefined) throw new Error('context hervido');
+  if (context === undefined) throw new Error('context no funciona');
   return context;
 };

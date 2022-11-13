@@ -1,5 +1,5 @@
+import { ISubmision } from '@/pages/dashboard/Submision/interface';
 import { instance } from './base';
-import { ISubmision } from '../pages/dashboard/context/submision.context';
 const endpoint = 'submision';
 
 export const submisionService = {

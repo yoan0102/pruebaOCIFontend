@@ -111,15 +111,8 @@ const Submision: React.FC<SubmisionInterface> = () => {
       <h2 className="text-center mb-5">Solicitud de Matricula de Circulo Infantil</h2>
       <Formik
         initialValues={initialValues}
-        onSubmit={(values, actions) => {
-          submisionContext?.createSubmision({
-            noEntry: values.noEntry,
-            type: values.type,
-            social_case: values.social_case,
-            motive: values.motive,
-            children: values.children,
-            parents: values.children.parents,
-          });
+        onSubmit={async (values, actions) => {
+          const submision = await submisionContext?.createSubmision({ submision: values });
         }}
         validationSchema={SignupSchema}
       >
