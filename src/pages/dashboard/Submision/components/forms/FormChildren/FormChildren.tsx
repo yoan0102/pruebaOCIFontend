@@ -32,7 +32,7 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
             <Field
               className="form-control"
               type="number"
-              name="cbhildren.noIdentity"
+              name="children.noIdentity"
               id="noIdentity"
               placeholder="Numero de CI"
               value={values.noIdentity}
@@ -91,7 +91,6 @@ const FormChildren: React.FC<FormChildrenProps> = ({ values }) => {
               placeholder="Segundo Apellido"
               value={values.lastNameChildren2}
             />
-            <ErrorMessage name="children.lastNameChildren2" component="p" className="text-danger" />
           </label>
           <div>
             <div className="form-check">

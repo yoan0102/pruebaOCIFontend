@@ -5,6 +5,7 @@ import { FormChildren } from './components/forms/FormChildren';
 import { ISubmision, SexChildren, TypeParent, TypeSubmision } from './interface';
 import './styles/Submision.scss';
 import { useSubmision } from '../context/submision.context';
+import { useNotification } from '@/context/Notification/NotificationProvider';
 
 export interface SubmisionInterface {}
 
@@ -106,13 +107,21 @@ const initialValues: ISubmision = {
 
 const Submision: React.FC<SubmisionInterface> = () => {
   const submisionContext = useSubmision();
+  const notification = useNotification();
   return (
     <div className="submision container">
       <h2 className="text-center mb-5">Solicitud de Matricula de Circulo Infantil</h2>
       <Formik
         initialValues={initialValues}
         onSubmit={async (values, actions) => {
-          const submision = await submisionContext?.createSubmision({ submision: values });
+          try {
+            const submision = await submisionContext?.createSubmision({ submision: values });
+            if (submision) {
+              notification.getSuccess('Submison Guardada');
+            }
+          } catch (error) {
+            notification.getError('Ocurrio un error intentalo mas tarde');
+          }
         }}
         validationSchema={SignupSchema}
       >
@@ -123,29 +132,29 @@ const Submision: React.FC<SubmisionInterface> = () => {
                 <h2 className="text-center">Datos de la Planilla</h2>
               </div>
               <div className="card-body">
-                <div className="row justify-content-between">
-                  <div className="col-sm-2 mb-3">
+                <div className="row justify-content-between align-items-center">
+                  <div className="col-sm-1 mb-3">
                     <label htmlFor="noEntry" className="form-label">
-                      No De entrada de la Planilla
+                      No De entrada
                     </label>
                     <Field type="email" className="form-control" name="noEntry" id="noEntry" />
                   </div>
-                  <div className="col-sm-2">
-                    <div className="col-sm-2 p-md-2">
-                      <div className="form-check form-switch">
-                        <Field
-                          className="form-check-input switch-lg"
-                          type="checkbox"
-                          role="switch"
-                          name="social_case"
-                          id="social_case"
-                        />
-                        <label className="form-label" htmlFor="social_case">
-                          Caso Social
-                        </label>
-                      </div>
+                  <div className="col-sm-1 p-md-2">
+                    <div className="form-check form-switch">
+                      <Field
+                        className="form-check-input switch-lg"
+                        type="checkbox"
+                        role="switch"
+                        name="social_case"
+                        id="social_case"
+                      />
+                      <label className="form-label" htmlFor="social_case">
+                        Caso Social
+                      </label>
                     </div>
+                  </div>
 
+                  <div className="col-sm-2 d-flex">
                     <div className="form-check">
                       <input
                         className="form-check-input"
